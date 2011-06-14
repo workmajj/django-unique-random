@@ -10,7 +10,7 @@ from django.db import models
 # Example set is Crockford's encoding:
 # http://www.crockford.com/wrmg/base32.html
 CHARSET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ'
-LENGTH = 8
+LENGTH = 16
 MAX_TRIES = 1024
 
 class RandomCode(models.Model):
@@ -32,6 +32,7 @@ class RandomCode(models.Model):
         been used, repeat until a unique code is found, or fail after trying
         MAX_TRIES number of times. (This will work reliably for even modest
         values of LENGTH and MAX_TRIES, but do check for the exception.)
+        Discussion of this method: http://stackoverflow.com/questions/2076838/
         """
         loop_num = 0
         unique = False
