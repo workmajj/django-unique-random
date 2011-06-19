@@ -1,5 +1,5 @@
 # John J. Workman (@workmajj)
-# django-random-code-model:
+# django-unique-random:
 # A Django model that generates a unique random code upon saving.
 
 from random import randrange
