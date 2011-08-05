@@ -57,3 +57,8 @@ Testing & Usage
 7. Customize the codes by changing the set ```CHARSET``` from which characters are chosen, or the number of characters ```LENGTH``` that are picked. (If you do change these, make sure that ```MAX_TRIES``` is set to an appropriate value and that you handle the possible ```ValueError``` exception.)
 
 8. Profit!
+
+License
+-------
+
+This code is in the public doman.
