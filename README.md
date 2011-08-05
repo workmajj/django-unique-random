@@ -61,4 +61,4 @@ Testing & Usage
 License
 -------
 
-This code is in the public doman.
+This code is in the public domain.
