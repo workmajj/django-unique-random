@@ -37,7 +37,7 @@ class UniqueRandom(models.Model):
         while not unique:
             if loop_num < MAX_TRIES:
                 new_code = ''
-                for i in xrange(LENGTH):
+                for i in range(LENGTH):
                     new_code += CHARSET[randrange(0, len(CHARSET))]
                 if not UniqueRandom.objects.filter(code=new_code):
                     self.code = new_code
