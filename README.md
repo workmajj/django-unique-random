@@ -8,6 +8,8 @@ Contact
 
 John J. Workman ([@workmajj](https://twitter.com/workmajj))
 
+I worked on this software during my time as a [Recurse Center](https://www.recurse.com/) facilitator. If you'd like to join a warm community of programmers dedicated to self-improvement, you should consider applying. :-)
+
 Description
 -----------
 
@@ -16,15 +18,15 @@ While working on another project, I wanted to identify objects by codes that wer
 * of a constant length;
 * unique, though not necessarily universally;
 * random (i.e., not generated from these objects' primary keys); and
-* derived from a specific alphabet, in this case [Crockford's](http://www.crockford.com/wrmg/base32.html) base-32 character set.
+* derived from a specific alphabet, in this case [Crockford's base-32 character set](http://www.crockford.com/wrmg/base32.html).
 
 This Django app consists of a `models.py` file whose ```UniqueRandom``` model generates such codes. You can modify ```UniqueRandom``` to store other fields/relationships, but it's probably easier just to copy its ```save()``` method to one of your own models and sync/migrate your database.
 
 The ```save()``` method works by making random codes of a given length. When a code is found that hasn't already been used, it's assigned to the current object. Obviously this method could be problematic for short codes and/or small alphabets; for a discussion, see [this Stack Overflow post](http://stackoverflow.com/questions/2076838/generating-non-repeating-random-numbers-in-python) (tl;dr: working with a base-10 alphabet, you're more than fine with 12-digit codes).
 
-These codes work well as human-readable serial numbers that can be easily entered and not so easily guessed. **If you're interested in random-looking but deterministic IDs (and don't care about readability), try padding indexes then encrypting them with a symmetric algorithm.** You can then decrypt IDs, discard the padding, and use the plaintext indexes to look up rows quickly.
+These codes work well as human-readable serial numbers that can be easily entered but not so easily guessed. **If you're interested in random-looking but deterministic IDs (and don't care about readability), try padding indexes then encrypting them with a symmetric algorithm.** You can then decrypt IDs, discard the padding, and use the plaintext indexes to look up rows quickly.
 
-N.B. Thanks to [@diasgab](https://github.com/diasgab) for the Python 2-to-3 `xrange()`-to-`range()` update!
+Thanks to [@diasgab](https://github.com/diasgab) for the Python 2-to-3 `xrange()`-to-`range()` update!
 
 Testing & Usage
 ---------------
