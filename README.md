@@ -1,7 +1,7 @@
 django-unique-random
 ====================
 
-A Django model that generates unique random codes upon saving
+Django model that generates unique random codes upon saving
 
 Contact
 -------
@@ -44,7 +44,7 @@ Testing & Usage
             'unique_random'
         )
 
-5. Sync your database, or migrate if using South.
+5. Migrate your database.
 
 6. To test, log in to your project's admin interface and click on the Unique Randoms table. Add a few rows with dummy data in the ```test_data``` field. When you're finished, the rows (including unique random codes, which auto-generate) should look like this:
 
